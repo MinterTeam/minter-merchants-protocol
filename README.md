@@ -1,6 +1,6 @@
 # Minter Merchants Protocol
 
-Текущая версия протокола: 0.1.0
+Текущая версия протокола: 0.2.0
 
 - [Status of this document](#status-of-this-document)
 - [MMP](#mmp)
@@ -69,7 +69,7 @@ Minter Merchants Protocol подразумевает создание и пос�
   "timestamp": "2020-11-10T15:03:07.0196Z",
   "provider": {
     "name": "Minter Push",
-    "company": "Minter Push LLC",
+    "slug": "minter-push",
     "checkout_url": "https://minterpush.com/mmp-checkout",
     "logo": "https://minterpush.com/logo.png",
     "support": "https://minterpush.com/support",
@@ -87,7 +87,7 @@ Minter Merchants Protocol подразумевает создание и пос�
         "id": "0c765fbf-554f-4af0-9463-a348a797c5ea",
         "name": "Product",
         "vendor": "Apple",
-        "category": "Gaming",
+        "category": "Games",
         "url": "https://...",
         "picture": "https://...",
         "short_description": "about",
@@ -117,9 +117,9 @@ Minter Merchants Protocol подразумевает создание и пос�
 
 ### Provider 
 `provider`
-- `name`: название провайдера, до 20 символов
+- `name`: название провайдера
 - `logo`: ссылка на логотип в формате .SVG, .PNG, .JPG
-- `company`: полное название компании
+- `slug`: идентификатор провайдера, будет использоваться при формировании URL, допустимые символы regex: `/[a-z0-9-]/`
 - `url`: URL главной страницы
 - `support`: URL ссылка на службу поддержки
 - `legal`: массив объектов, каждый из которых представляет собой юридические документ, с полями `title` и `url`
