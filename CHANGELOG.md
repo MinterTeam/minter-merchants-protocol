@@ -1,3 +1,6 @@
+## 0.3.0 - 2020-12-04
+- add `n` name field to callback data
+
 ## 0.2.0 - 2020-11-28
 - remove `provider.company`
 - add `provider.slug`

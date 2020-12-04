@@ -1,6 +1,6 @@
 # Minter Merchants Protocol
 
-Текущая версия протокола: 0.2.0
+Текущая версия протокола: 0.3.0
 
 - [Status of this document](#status-of-this-document)
 - [MMP](#mmp)
@@ -246,19 +246,21 @@ mmp1.0.0 ASdasdASDASdasd...
 
 - `mmp{{version}}` - заголовок с версией протокола, отделяется пробелом от бинарных данные
 - `merchant_public_key` - публичный ключ мерчанта для расшифровки сообщения
-- `encrypted_data` - зашифрованный [JSON5](https://json5.org/) (чтобы не нужно было название полей оборачивать кавычками, тем самым экономим байты в пейлоаде) с полями `u`, `s`, `m`
+- `encrypted_data` - зашифрованный [JSON5](https://json5.org/) (чтобы не нужно было название полей оборачивать кавычками, тем самым экономим байты в пейлоаде) с полями `u`, `n`, `m`, `s`
 
 ```json5
 {
-    u: "https://…",
-    s: "YOUR_REDEEM_CODE",
-    m: "Your WorldOfWarcraft account NagibatorPWNZ is fulfilled with 1000 Gold"
+    u: "https://example.com/unique-order-url",
+    n: "Offer name",
+    m: "Your WorldOfWarcraft account NagibatorPWNZ is fulfilled with 1000 Gold",
+    s: "YOUR_REDEEM_CODE"
 }
 ```
 
 `u` - URL, обязательное поле, уникальная ссылка на сайт мерчанта, где юзер может может посмотреть информацию о заказе и получить свой товар 
-`s` - shipment, опциональное поле, в нём содержится сам товар, используется, если товар является, например, подарочным купоном в виде строки символов
+`n` - name, название товара
 `m` - message, обязательное поле, сообщение пользователю
+`s` - shipment, опциональное поле, в нём содержится сам товар, используется, если товар является, например, подарочным купоном в виде строки символов
 
 
 ### Transaction payload cipher
