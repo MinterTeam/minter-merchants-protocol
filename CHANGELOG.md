@@ -1,3 +1,6 @@
+## 0.4.0 - 2021-01-21
+- add `username` role to `field_list`
+
 ## 0.3.0 - 2020-12-04
 - add `n` name field to callback data
 
