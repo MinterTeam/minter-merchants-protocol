@@ -17,6 +17,8 @@
     + [Field role Username](#field-role-username)
 - [Aggregation of MMP-feeds](#aggregation-of-mmp-feeds)
 - [How to become a merchant](#how-to-become-a-merchant)
+  * [Development](#development)
+  * [Production](#production)
 - [Checkout page query parameters](#checkout-page)
 - [Callback to user](#callback-to-user)
   * [Transaction payload cipher](#transaction-payload-cipher)
@@ -189,6 +191,18 @@ Minter Merchants Protocol подразумевает создание и пос�
 
 
 ## How to become a merchant
+
+### Development
+Для начала разработки и тестирования своего мерчанта мы подготовили тестового аггрегатора и тестовый кошелёк.
+https://minter-wallet.kubernetes.icu (пока что логин работает только через Google)
+https://mma-api.kubernetes.icu/api/v1/offers
+
+Чтобы добавить своего мерчанта в каталог, нужно сделать HTTP запрос с указанием MMP-файла
+```
+curl -X POST --location "https://mma-api.kubernetes.icu/api/v1/merchant" -H "Content-Type: application/json"  -d "{\"feed_url\": \"https://example.com/mmp_feed\" }"
+```
+
+### Production
 В репозитории https://github.com/MinterTeam/minter-merchants-protocol будет собиратся список проверенных мерчантов, каждый мерчант должен будет сделать пулл-реквест, чтобы добавить свой фид
 
 merchant-list.json
